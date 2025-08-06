@@ -1,0 +1,154 @@
+/* ========== Base ========== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+  display: flex;
+}
+
+/* ========== Sidebar ========== */
+.sidebar {
+  width: 250px;
+  background: #000;
+  border-right: 1px solid #222;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+}
+
+.sidebar a {
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.sidebar a:hover {
+  background: #1a1a1a;
+}
+
+/* ========== Topbar ========== */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 250px;
+  right: 0;
+  height: 60px;
+  background: #111;
+  border-bottom: 1px solid #222;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  z-index: 1000;
+}
+
+.topbar h1 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+/* ========== Scrollable Feed ========== */
+.scroll-feed {
+  position: absolute;
+  top: 60px;
+  left: 250px;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+/* ========== Video Section ========== */
+.video-section {
+  height: calc(100vh - 60px); /* fills viewport under the topbar */
+  width: 100%;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ========== Video Container ========== */
+.video-container {
+  width: 360px;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========== Info + Buttons ========== */
+.video-info {
+  position: absolute;
+  bottom: 20px;
+  left: 16px;
+  z-index: 10;
+}
+
+.video-info h4 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.video-info p {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.video-actions {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+  z-index: 10;
+}
+
+.video-actions .action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.video-actions img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.video-actions span {
+  font-size: 0.75rem;
+  color: white;
+  text-align: center;
+}
